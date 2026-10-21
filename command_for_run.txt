@@ -1,0 +1,15 @@
+# To start the network type: clab deploy
+
+for ping type: docker exec  clab-nokia-10clients-client1 ping -c <number of packets> <ip address>
+
+example :
+docker exec  clab-nokia-10clients-client1 ping -c 5 172.20.20.15
+
+you can repeat for any client
+
+# For redeploy type: clab redeploy
+
+# To close the network type: clab destroy
+
+
+
