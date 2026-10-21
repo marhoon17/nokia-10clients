@@ -1,0 +1,109 @@
+
+---
+
+# .gitignore
+
+```gitignore
+# -----------------------------
+# Containerlab generated files
+# -----------------------------
+*.clab.yml.bak
+*.clab.yml.orig
+clab-*/
+*.log
+
+# ------------------------------------------
+# Containerlab / Docker runtime artifacts
+# ------------------------------------------
+# Containerlab may create local directories for bind mounts
+topology-data.json
+inventory/
+ansible-inventory.yml
+backup/
+
+# ------------------------------------------
+# SR Linux / Nokia artifacts
+# ------------------------------------------
+*.srl
+srlinux-*/
+*.cfg
+
+# ------------------------------------------
+# Python (for automation scripts)
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ------------------------------------------
+# Node / tooling
+# ------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------------------------------------
+# IDE / Editor
+# ------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# ------------------------------------------
+# OS
+# ------------------------------------------
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# ------------------------------------------
+# Secrets / credentials
+# ------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# ------------------------------------------
+# Test / debug output
+# ------------------------------------------
+test-results/
+coverage/
+.coverage
+htmlcov/
+*.pcap
+*.pcapng
+*.trace

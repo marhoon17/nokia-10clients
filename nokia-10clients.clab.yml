@@ -1,0 +1,83 @@
+name: nokia-10clients
+
+topology:
+  nodes:
+    # Nokia SR Linux Router
+    nokia-router:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+      type: ixr-d2l
+
+    # 10 Linux Clients
+    client1:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.1.1/24 dev eth1
+        - ip link set eth1 up
+    client2:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.2.1/24 dev eth1
+        - ip link set eth1 up
+    client3:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.3.1/24 dev eth1
+        - ip link set eth1 up
+    client4:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.4.1/24 dev eth1
+        - ip link set eth1 up
+    client5:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.5.1/24 dev eth1
+        - ip link set eth1 up
+    client6:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.6.1/24 dev eth1
+        - ip link set eth1 up
+    client7:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.7.1/24 dev eth1
+        - ip link set eth1 up
+    client8:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.8.1/24 dev eth1
+        - ip link set eth1 up
+    client9:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.9.1/24 dev eth1
+        - ip link set eth1 up
+    client10:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.0.10.1/24 dev eth1
+        - ip link set eth1 up
+
+  links:
+    - endpoints: ["nokia-router:e1-1", "client1:eth1"]
+    - endpoints: ["nokia-router:e1-2", "client2:eth1"]
+    - endpoints: ["nokia-router:e1-3", "client3:eth1"]
+    - endpoints: ["nokia-router:e1-4", "client4:eth1"]
+    - endpoints: ["nokia-router:e1-5", "client5:eth1"]
+    - endpoints: ["nokia-router:e1-6", "client6:eth1"]
+    - endpoints: ["nokia-router:e1-7", "client7:eth1"]
+    - endpoints: ["nokia-router:e1-8", "client8:eth1"]
+    - endpoints: ["nokia-router:e1-9", "client9:eth1"]
+    - endpoints: ["nokia-router:e1-10", "client10:eth1"]
